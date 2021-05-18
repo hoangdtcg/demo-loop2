@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+<body>
+<script>
+
+    let n = +prompt('Nhập 1 số');
+
+    function checkFibonacci(number) {
+        let first = 0;
+        let second = 1;
+        let sum = 0;
+
+        while (true) {
+            first = second;
+            second = sum;
+            sum = first + second;
+
+            if(number == sum){
+                alert(number + ' là số fibonacci');
+                break;
+            }
+            if (sum > number){
+                alert(number + ' không phải là số fibonacci');
+                break;
+            }
+
+        }
+    }
+
+    checkFibonacci(n);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xổ số Miền Bắc</title>
+</head>
+<body>
+<input type="text" id="guess-number" placeholder="Nhập số bạn muốn đánh">
+<input type="text" id="amount" placeholder="Nhập số tiền bạn muốn đánh" value="100000">
+<button onclick="funnyNumber()">Đánh</button>
+<button onclick="newDay()">Làm lại cuộc đời</button>
+<p id="money"></p>
+<script>
+    //Math.random() - random số từ 0-1(0-0.9999)
+    let money = 1000000;
+    let luckyNumber = randomNumber(30,60);
+    let count = 0;
+
+    // console.log(luckyNumber);
+
+    function funnyNumber() {
+        let myNumber = +document.getElementById('guess-number').value;
+        let amount = +document.getElementById('amount').value;
+        // luckyNumber = Math.floor(Math.random() * 100);
+        // do {
+        //     myNumber = Math.floor(Math.random() * 100);
+        if (myNumber == luckyNumber) {
+            alert('Bạn đã đoán trúng số: ' + luckyNumber + ' ,Nhận ' + (amount * 70) + ' vnđ');
+            money += amount * 70;
+
+        } else {
+            alert('Bạn đã mất: ' + amount + '. Chúc bạn may mắn lần sau')
+            money -= amount;
+        }
+        document.getElementById('money').innerHTML = money;
+        // console.log('Số may mắn: '+luckyNumber);
+
+        //     count++;
+        // } while (myNumber != luckyNumber);
+    }
+
+    function randomNumber(min,max) {
+        let rand = Math.floor(Math.random() * (max-min))+min;
+        return rand;
+    }
+
+</script>
+</body>
+</html>

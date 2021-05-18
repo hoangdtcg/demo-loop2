@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let money = 1000000000;
+  let percent = 1/100;
+  let month = +prompt('Nhập số tháng');
+  for (let i = 0; i < month; i++) {
+    money = money+(money*percent);
+  }
+  document.write('Bạn có '+ money.toFixed(2)+' sau '+month+' tháng');
+</script>
+</body>
+</html>

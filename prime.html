@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime</title>
+</head>
+<body>
+<script>
+    //Kĩ thuật của bài toán check đúng sai: đặt 1 biến boolean
+    // Đặt lính canh, đặt cờ, flag.
+    /*function checkPrime() {
+        let limit = +prompt('Số lượng số nguyên tố');
+        let count = 0;
+        let N = 0;
+
+        while (count < limit){
+            let flag = true;
+            if (N < 2) {
+                flag = false;
+            }
+            if (N == 2) {
+                flag = true;
+            }
+            let i = 2;
+            while (i < N) {
+                if (N % i == 0) {
+                    flag = false;
+                }
+                i++;
+            }
+
+            if(flag){
+                document.write(N + ' là số nguyên tố <br>');
+                count++;
+            }
+            N++;
+        }
+
+
+    }*/
+    // checkPrime();
+
+    function listPrime() {
+        let limit = +prompt('Số lượng số nguyên tố');
+        let count = 0;
+        let N = 0;
+        let sum = 0;
+
+        while (count < limit){
+            if(isPrime(N)){
+                document.write(N + ' is prime <br>');
+                sum += N;
+                count++;
+            }
+            N++;
+        }
+
+        document.write('Sum: '+ sum);
+
+
+    }
+
+    function isPrime(N) {
+        let flag = true;
+        if (N < 2) {
+            flag = false;
+        }
+        if (N == 2) {
+            flag = true;
+        }
+        let i = 2;
+        while (i < N) {
+            if (N % i == 0) {
+                flag = false;
+            }
+            i++;
+        }
+
+        return flag;
+    }
+
+    listPrime();
+</script>
+</body>
+</html>
